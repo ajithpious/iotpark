@@ -51,30 +51,22 @@ function getstatus() {
         },
         success: function(data, status, xhr) {
 
-            console.log(data)
-                // let columns = JSON.parse(data.columns);
-                // let values = JSON.parse(data.data);
-                // let table = document.querySelector("table[id='rowsTable']");
-                // table.innerHTML = "";
-                // generateTable(table, values)
-                // generateTableHead(table, columns)
-                // let chk1 = document.querySelector("input[id='chk1']");
-                // let chk2 = document.querySelector("input[id='chk2']");
-                // let p = document.querySelector("p[id='temp']");
-                // if (data.context.stat == 1) {
-                //     chk1.checked = true
-                // } else {
-                //     chk1.checked = false
-                // }
-                // console.log(data)
+            console.log(data.msg)
             let car1 = document.querySelector("div[id='car1']")
+            let car2 = document.querySelector("div[id='car2']")
             console.log(car1)
             car1.style.backgroundColor = "blue"
+            car2.style.backgroundColor = "blue"
             console.log()
-            if (data.value > 20) {
+            if (data.msg.value > 20) {
                 car1.style.backgroundColor = "green"
             } else {
                 car1.style.backgroundColor = "red"
+            }
+            if (data.msg2.value > 20) {
+                car2.style.backgroundColor = "green"
+            } else {
+                car2.style.backgroundColor = "red"
             }
             // p.innerHTML = data.value
 
